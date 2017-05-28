@@ -1,0 +1,32 @@
+C:\Users\toshiba\Documents\Visual Studio 2013\Projects\2014150710\InmuebleVenta\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
+C:\Users\toshiba\Documents\Visual Studio 2013\Projects\2014150710\InmuebleVenta\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
+C:\Users\toshiba\Documents\Visual Studio 2013\Projects\2014150710\InmuebleVenta\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
+C:\Users\toshiba\Documents\Visual Studio 2013\Projects\2014150710\InmuebleVenta\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
+C:\Users\toshiba\Documents\Visual Studio 2013\Projects\2014150710\InmuebleVenta\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.csprojResolveAssemblyReference.cache
+C:\Users\fgome\Downloads\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
+C:\Users\fgome\Downloads\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
+C:\Users\fgome\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
+C:\Users\fgome\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
+C:\Users\toshiba\Desktop\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
+C:\Users\toshiba\Desktop\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
+C:\Users\toshiba\Desktop\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
+C:\Users\toshiba\Desktop\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
+C:\Users\Bruno\Downloads\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
+C:\Users\Bruno\Downloads\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
+C:\Users\Bruno\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Bruno\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
+C:\Users\Bruno\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
+C:\Users\Clase\Downloads\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
+C:\Users\Clase\Downloads\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
+C:\Users\Clase\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Clase\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
+C:\Users\Clase\Downloads\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
+G:\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
+G:\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
+G:\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.csprojResolveAssemblyReference.cache
+G:\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
+G:\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
+C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
+C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
+C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
+C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
