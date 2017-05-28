@@ -2,7 +2,6 @@
 using InmuebleVenta.Persistence.EntitiesConfigurations;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -47,14 +46,10 @@ namespace InmuebleVenta.Persistence
         public DbSet<Departamento> Departamentos { get; set; }
 
 
-        public InmuebleVentaDbContext() : base("Inmuebles")
-		{
-
-		}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+
             modelBuilder.Configurations.Add(new UbigeoConfiguration());
             modelBuilder.Configurations.Add(new DepartamentoConfiguration());
             modelBuilder.Configurations.Add(new ProvinciaConfiguration());
@@ -67,6 +62,7 @@ namespace InmuebleVenta.Persistence
             modelBuilder.Configurations.Add(new ContratoConfiguration());
             modelBuilder.Configurations.Add(new VisitaConfiguration());
             modelBuilder.Configurations.Add(new EmpleadoConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     

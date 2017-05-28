@@ -1,5 +1,5 @@
 ﻿using InmuebleVenta.Entities;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +10,25 @@ namespace InmuebleVenta.Persistence.Repositories
 {
     public class FacturaRepository : Repository<Factura>, IFacturaRepository
     {
-          public FacturaRepository(InmuebleVentaDbContext context):base(context)
-		{
-		}
+        public FacturaRepository(InmuebleVentaDbContext context) : base(context)
+        {
 
-        
-        /*    private readonly InmuebleVentaDbContext _Context;
-        private FacturaRepository()
-        {
-                
         }
-        public FacturaRepository(InmuebleVentaDbContext context)
-        {
-            
-            _Context = context;
-        }
-     */
+
+
+
+
+        /* private readonly InmuebleVentaDbContext _Context;
+
+         public FacturaRepository(InmuebleVentaDbContext context)
+         {
+             _Context = context;
+         }
+
+         private FacturaRepository()
+         {
+
+         }
+         */
     }
 }

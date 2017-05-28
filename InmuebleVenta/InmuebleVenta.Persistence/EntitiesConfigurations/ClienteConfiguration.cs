@@ -1,7 +1,6 @@
 ﻿using InmuebleVenta.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -21,7 +20,6 @@ namespace InmuebleVenta.Persistence.EntitiesConfigurations
             Property(c => c.ApeCliente);
             Property(c => c.TelefonoCliente);
             Property(c => c.DireccionCliente);
-            
 
 
         }

@@ -1,5 +1,5 @@
 ﻿using InmuebleVenta.Entities;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +10,24 @@ namespace InmuebleVenta.Persistence.Repositories
 {
     public class UbigeoRepository : Repository<Ubigeo>, IUbigeoRepository
     {
-      public UbigeoRepository(InmuebleVentaDbContext context):base(context)
-		{
-		}
+        public UbigeoRepository(InmuebleVentaDbContext context) : base(context)
+        {
 
-  /*      private readonly InmuebleVentaDbContext _Context;
-        private UbigeoRepository()
-        {
-                
         }
-        public UbigeoRepository(InmuebleVentaDbContext context)
-        {
-           
-            _Context = context;
-        }
-   */
+
+
+
+        /* private  readonly InmuebleVentaDbContext _Context;
+
+         public UbigeoRepository(InmuebleVentaDbContext context)
+         {
+             _Context = context;
+         }
+
+         private UbigeoRepository()
+         {
+
+         }
+         */
     }
 }

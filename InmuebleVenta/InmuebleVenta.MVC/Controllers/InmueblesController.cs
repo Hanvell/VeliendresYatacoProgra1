@@ -8,14 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using InmuebleVenta.Entities;
 using InmuebleVenta.Persistence;
-using InmuebleVenta.Persistence.Repositories;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 
 namespace InmuebleVenta.MVC.Controllers
 {
     public class InmueblesController : Controller
     {
-        //private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
         private readonly IUnityOfWork _UnityOfWork;
 
         public InmueblesController(IUnityOfWork unityOfWork)
@@ -23,29 +21,25 @@ namespace InmuebleVenta.MVC.Controllers
             _UnityOfWork = unityOfWork;
         }
 
-        public InmueblesController()
-        {
-
-        }
-
-
         // GET: Inmuebles
         public ActionResult Index()
         {
             //var inmuebles = db.Inmuebles.Include(i => i.Contrato).Include(i => i.Propietario).Include(i => i.Ubigeo);
-            //var inmuebles = db.Include(i => i.Contrato).Include(i => i.Propietario).Include(i => i.Ubigeo);
-            return View(_UnityOfWork.Inmuebles.GetAll());
+            // return View(inmuebles.ToList());
+            return View(_UnityOfWork.Inmueble.GetAll());
+
         }
 
         // GET: Inmuebles/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Inmueble inmueble = db.Inmuebles.Find(id);
-            Inmueble inmueble = _UnityOfWork.Inmuebles.Get(id);
+            //  Inmueble inmueble = db.Inmuebles.Find(id);
+            Inmueble inmueble = _UnityOfWork.Inmueble.Get(id);
+
             if (inmueble == null)
             {
                 return HttpNotFound();
@@ -56,6 +50,9 @@ namespace InmuebleVenta.MVC.Controllers
         // GET: Inmuebles/Create
         public ActionResult Create()
         {
+            ViewBag.InmuebleId = new SelectList(db.Contratos, "ContratoId", "NombreCliente");
+            ViewBag.PropietarioId = new SelectList(db.Propietarios, "PropietarioDNI", "NombrePropietario");
+            ViewBag.UbigeoId = new SelectList(db.Ubigeos, "UbigeoId", "UbigeoId");
             return View();
         }
 
@@ -68,30 +65,37 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.Inmuebles.Add(inmueble);
-                _UnityOfWork.Inmuebles.Add(inmueble);
-                //db.SaveChanges();
+                // db.Inmuebles.Add(inmueble);
+                _UnityOfWork.Inmueble.Add(inmueble);
+
+                //  db.SaveChanges();
                 _UnityOfWork.SaveChanges();
+               
                 return RedirectToAction("Index");
             }
 
+            ViewBag.InmuebleId = new SelectList(db.Contratos, "ContratoId", "NombreCliente", inmueble.InmuebleId);
+            ViewBag.PropietarioId = new SelectList(db.Propietarios, "PropietarioDNI", "NombrePropietario", inmueble.PropietarioId);
+            ViewBag.UbigeoId = new SelectList(db.Ubigeos, "UbigeoId", "UbigeoId", inmueble.UbigeoId);
             return View(inmueble);
         }
 
         // GET: Inmuebles/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //Inmueble inmueble = db.Inmuebles.Find(id);
-            Inmueble inmueble = _UnityOfWork.Inmuebles.Get(id);
+            Inmueble inmueble = _UnityOfWork.Inmueble.Get(id);
             if (inmueble == null)
             {
                 return HttpNotFound();
             }
-            //ViewBag.InmuebleId = new SelectList(db.Contratos, "ContratoId", "NombreCliente", inmueble.InmuebleId);
+            ViewBag.InmuebleId = new SelectList(db.Contratos, "ContratoId", "NombreCliente", inmueble.InmuebleId);
+            ViewBag.PropietarioId = new SelectList(db.Propietarios, "PropietarioDNI", "NombrePropietario", inmueble.PropietarioId);
+            ViewBag.UbigeoId = new SelectList(db.Ubigeos, "UbigeoId", "UbigeoId", inmueble.UbigeoId);
             return View(inmueble);
         }
 
@@ -104,27 +108,28 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(inmueble).State = EntityState.Modified;
+                // db.Entry(inmueble).State = EntityState.Modified;
                 _UnityOfWork.StateModified(inmueble);
                 //db.SaveChanges();
                 _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.InmuebleId = new SelectList(db.Contratos, "ContratoId", "NombreCliente", inmueble.InmuebleId);
-            //ViewBag.PropietarioId = new SelectList(db.Propietarios, "PropietarioDNI", "NombrePropietario", inmueble.PropietarioId);
-            //ViewBag.UbigeoId = new SelectList(db.Ubigeos, "UbigeoId", "UbigeoId", inmueble.UbigeoId);
+            ViewBag.InmuebleId = new SelectList(db.Contratos, "ContratoId", "NombreCliente", inmueble.InmuebleId);
+            ViewBag.PropietarioId = new SelectList(db.Propietarios, "PropietarioDNI", "NombrePropietario", inmueble.PropietarioId);
+            ViewBag.UbigeoId = new SelectList(db.Ubigeos, "UbigeoId", "UbigeoId", inmueble.UbigeoId);
             return View(inmueble);
         }
 
         // GET: Inmuebles/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Inmueble inmueble = db.Inmuebles.Find(id);
-            Inmueble inmueble = _UnityOfWork.Inmuebles.Get(id);
+
+           // Inmueble inmueble = db.Inmuebles.Find(id);
+            Inmueble inmueble = _UnityOfWork.Inmueble.Get(id);
             if (inmueble == null)
             {
                 return HttpNotFound();
@@ -138,9 +143,10 @@ namespace InmuebleVenta.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             //Inmueble inmueble = db.Inmuebles.Find(id);
-            Inmueble inmueble = _UnityOfWork.Inmuebles.Get(id);
-            //db.Inmuebles.Remove(inmueble);
-            _UnityOfWork.Inmuebles.Delete(inmueble);
+            Inmueble inmueble = _UnityOfWork.Inmueble.Get(id);
+
+            // db.Inmuebles.Remove(inmueble);
+            _UnityOfWork.Inmueble.Delete(inmueble);
             //db.SaveChanges();
             _UnityOfWork.SaveChanges();
             return RedirectToAction("Index");
@@ -150,7 +156,7 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (disposing)
             {
-                //db.Dispose();
+                // db.Dispose();
                 _UnityOfWork.Dispose();
             }
             base.Dispose(disposing);

@@ -1,5 +1,5 @@
 ﻿using InmuebleVenta.Entities;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +10,26 @@ namespace InmuebleVenta.Persistence.Repositories
 {
     public class ProvinciaRepository : Repository<Provincia>, IProvinciaRepository
     {
-         public ProvinciaRepository(InmuebleVentaDbContext context):base(context)
-		{
-		}
-
-      /*  private readonly InmuebleVentaDbContext _Context;
-        private ProvinciaRepository()
+        public ProvinciaRepository(InmuebleVentaDbContext context) : base(context)
         {
-                
+
         }
+
+
+
+
+
+        /*private readonly InmuebleVentaDbContext _Context;
+
         public ProvinciaRepository(InmuebleVentaDbContext context)
         {
-           
             _Context = context;
         }
-       */
+
+        private ProvinciaRepository()
+        {
+
+        }
+        */
     }
 }

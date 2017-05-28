@@ -8,17 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using InmuebleVenta.Entities;
 using InmuebleVenta.Persistence;
+using InmuebleVenta.Persistence.Repositories;
 
 namespace InmuebleVenta.MVC.Controllers
 {
     public class BoletasController : Controller
     {
-        private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
-
+        //private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
+        private readonly UnityOfWork unityOfWork = UnityOfWork.Instance;
         // GET: Boletas
         public ActionResult Index()
         {
-            return View(db.Comprobantes.ToList());
+            // return View(db.Comprobantes.ToList());
+            return View(unityOfWork.Boleta.GetAll());
         }
 
         // GET: Boletas/Details/5
@@ -28,7 +30,8 @@ namespace InmuebleVenta.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Boleta boleta = db.Comprobantes.Find(id);
+            // Boleta boleta = db.Comprobantes.Find(id);
+            Boleta boleta = unityOfWork.Boleta.Get(id);
             if (boleta == null)
             {
                 return HttpNotFound();
@@ -51,8 +54,11 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Comprobantes.Add(boleta);
-                db.SaveChanges();
+                //db.Comprobantes.Add(boleta);
+                unityOfWork.Boleta.Add(boleta);
+
+                // db.SaveChanges();
+                unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +72,8 @@ namespace InmuebleVenta.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Boleta boleta = db.Comprobantes.Find(id);
+            //Boleta boleta = db.Comprobantes.Find(id);
+            Boleta boleta = unityOfWork.Boleta.Get(id);
             if (boleta == null)
             {
                 return HttpNotFound();
@@ -83,8 +90,10 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(boleta).State = EntityState.Modified;
-                db.SaveChanges();
+                // db.Entry(boleta).State = EntityState.Modified;
+                unityOfWork.StateModified(boleta);
+                // db.SaveChanges();
+                unityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(boleta);
@@ -97,7 +106,8 @@ namespace InmuebleVenta.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Boleta boleta = db.Comprobantes.Find(id);
+            //Boleta boleta = db.Comprobantes.Find(id);
+            Boleta boleta = unityOfWork.Boleta.Get(id);
             if (boleta == null)
             {
                 return HttpNotFound();
@@ -110,9 +120,14 @@ namespace InmuebleVenta.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Boleta boleta = db.Comprobantes.Find(id);
-            db.Comprobantes.Remove(boleta);
-            db.SaveChanges();
+            // Boleta boleta = db.Comprobantes.Find(id);
+            Boleta boleta = unityOfWork.Boleta.Get(id);
+
+            //db.Comprobantes.Remove(boleta);
+            unityOfWork.Boleta.Delete(boleta);
+
+            // db.SaveChanges();
+            unityOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +135,8 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
+                unityOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

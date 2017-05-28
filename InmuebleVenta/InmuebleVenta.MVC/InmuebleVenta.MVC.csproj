@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DBED3681-3EC3-499E-92ED-EF0D1A1A1098}</ProjectGuid>
+    <ProjectGuid>{FD9D43C3-D561-4F53-AB37-7C924CCF26C3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -148,8 +148,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BoletasController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ComprobantesController.cs" />
+    <Compile Include="Controllers\ContratoAlquilersController.cs" />
+    <Compile Include="Controllers\ContratoesController.cs" />
+    <Compile Include="Controllers\ContratoReservasController.cs" />
+    <Compile Include="Controllers\ContratoVentasController.cs" />
+    <Compile Include="Controllers\DistritoesController.cs" />
+    <Compile Include="Controllers\EmpleadoesController.cs" />
+    <Compile Include="Controllers\FacturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InmueblesController.cs" />
+    <Compile Include="Controllers\PropietariosController.cs" />
+    <Compile Include="Controllers\ProvinciasController.cs" />
+    <Compile Include="Controllers\TipoInmueblesController.cs" />
+    <Compile Include="Controllers\UbigeosController.cs" />
+    <Compile Include="Controllers\VisitasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,16 +206,96 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Inmuebles\Create.cshtml" />
-    <Content Include="Views\Inmuebles\Delete.cshtml" />
-    <Content Include="Views\Inmuebles\Details.cshtml" />
-    <Content Include="Views\Inmuebles\Edit.cshtml" />
-    <Content Include="Views\Inmuebles\Index.cshtml" />
     <Content Include="Views\Boletas\Create.cshtml" />
     <Content Include="Views\Boletas\Delete.cshtml" />
     <Content Include="Views\Boletas\Details.cshtml" />
     <Content Include="Views\Boletas\Edit.cshtml" />
     <Content Include="Views\Boletas\Index.cshtml" />
+    <Content Include="Views\Inmuebles\Create.cshtml" />
+    <Content Include="Views\Inmuebles\Delete.cshtml" />
+    <Content Include="Views\Inmuebles\Details.cshtml" />
+    <Content Include="Views\Inmuebles\Edit.cshtml" />
+    <Content Include="Views\Inmuebles\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Ubigeos\Create.cshtml" />
+    <Content Include="Views\Ubigeos\Delete.cshtml" />
+    <Content Include="Views\Ubigeos\Details.cshtml" />
+    <Content Include="Views\Ubigeos\Edit.cshtml" />
+    <Content Include="Views\Ubigeos\Index.cshtml" />
+    <Content Include="Views\Contratoes\Create.cshtml" />
+    <Content Include="Views\Contratoes\Delete.cshtml" />
+    <Content Include="Views\Contratoes\Details.cshtml" />
+    <Content Include="Views\Contratoes\Edit.cshtml" />
+    <Content Include="Views\Contratoes\Index.cshtml" />
+    <Content Include="Views\Comprobantes\Create.cshtml" />
+    <Content Include="Views\Comprobantes\Delete.cshtml" />
+    <Content Include="Views\Comprobantes\Details.cshtml" />
+    <Content Include="Views\Comprobantes\Edit.cshtml" />
+    <Content Include="Views\Comprobantes\Index.cshtml" />
+    <Content Include="Views\ContratoAlquilers\Create.cshtml" />
+    <Content Include="Views\ContratoAlquilers\Delete.cshtml" />
+    <Content Include="Views\ContratoAlquilers\Details.cshtml" />
+    <Content Include="Views\ContratoAlquilers\Edit.cshtml" />
+    <Content Include="Views\ContratoAlquilers\Index.cshtml" />
+    <Content Include="Views\ContratoReservas\Create.cshtml" />
+    <Content Include="Views\ContratoReservas\Delete.cshtml" />
+    <Content Include="Views\ContratoReservas\Details.cshtml" />
+    <Content Include="Views\ContratoReservas\Edit.cshtml" />
+    <Content Include="Views\ContratoReservas\Index.cshtml" />
+    <Content Include="Views\Distritoes\Create.cshtml" />
+    <Content Include="Views\Distritoes\Delete.cshtml" />
+    <Content Include="Views\Distritoes\Details.cshtml" />
+    <Content Include="Views\Distritoes\Edit.cshtml" />
+    <Content Include="Views\Distritoes\Index.cshtml" />
+    <Content Include="Views\Empleadoes\Create.cshtml" />
+    <Content Include="Views\Empleadoes\Delete.cshtml" />
+    <Content Include="Views\Empleadoes\Details.cshtml" />
+    <Content Include="Views\Empleadoes\Edit.cshtml" />
+    <Content Include="Views\Empleadoes\Index.cshtml" />
+    <Content Include="Views\Visitas\Create.cshtml" />
+    <Content Include="Views\Visitas\Delete.cshtml" />
+    <Content Include="Views\Visitas\Details.cshtml" />
+    <Content Include="Views\Visitas\Edit.cshtml" />
+    <Content Include="Views\Visitas\Index.cshtml" />
+    <Content Include="Views\TipoInmuebles\Create.cshtml" />
+    <Content Include="Views\TipoInmuebles\Delete.cshtml" />
+    <Content Include="Views\TipoInmuebles\Details.cshtml" />
+    <Content Include="Views\TipoInmuebles\Edit.cshtml" />
+    <Content Include="Views\TipoInmuebles\Index.cshtml" />
+    <Content Include="Views\Contratoes1\Create.cshtml" />
+    <Content Include="Views\Contratoes1\Delete.cshtml" />
+    <Content Include="Views\Contratoes1\Details.cshtml" />
+    <Content Include="Views\Contratoes1\Edit.cshtml" />
+    <Content Include="Views\Contratoes1\Index.cshtml" />
+    <Content Include="Views\Contratoes2\Create.cshtml" />
+    <Content Include="Views\Contratoes2\Delete.cshtml" />
+    <Content Include="Views\Contratoes2\Details.cshtml" />
+    <Content Include="Views\Contratoes2\Edit.cshtml" />
+    <Content Include="Views\Contratoes2\Index.cshtml" />
+    <Content Include="Views\Facturas\Create.cshtml" />
+    <Content Include="Views\Facturas\Delete.cshtml" />
+    <Content Include="Views\Facturas\Details.cshtml" />
+    <Content Include="Views\Facturas\Edit.cshtml" />
+    <Content Include="Views\Facturas\Index.cshtml" />
+    <Content Include="Views\Provincias\Create.cshtml" />
+    <Content Include="Views\Provincias\Delete.cshtml" />
+    <Content Include="Views\Provincias\Details.cshtml" />
+    <Content Include="Views\Provincias\Edit.cshtml" />
+    <Content Include="Views\Provincias\Index.cshtml" />
+    <Content Include="Views\Propietarios\Create.cshtml" />
+    <Content Include="Views\Propietarios\Delete.cshtml" />
+    <Content Include="Views\Propietarios\Details.cshtml" />
+    <Content Include="Views\Propietarios\Edit.cshtml" />
+    <Content Include="Views\Propietarios\Index.cshtml" />
+    <Content Include="Views\ContratoVentas\Create.cshtml" />
+    <Content Include="Views\ContratoVentas\Delete.cshtml" />
+    <Content Include="Views\ContratoVentas\Details.cshtml" />
+    <Content Include="Views\ContratoVentas\Edit.cshtml" />
+    <Content Include="Views\ContratoVentas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -248,9 +342,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53005</DevelopmentServerPort>
+          <DevelopmentServerPort>55330</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53005/</IISUrl>
+          <IISUrl>http://localhost:55330/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

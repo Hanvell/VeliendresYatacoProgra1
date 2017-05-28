@@ -1,5 +1,5 @@
 ﻿using InmuebleVenta.Entities;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +10,26 @@ namespace InmuebleVenta.Persistence.Repositories
 {
     public class DistritoRepository : Repository<Distrito>, IDistritoRepository
     {
-            public DistritoRepository(InmuebleVentaDbContext context):base(context)
-		{
-		}
-
-        
-        /*  private readonly InmuebleVentaDbContext _Context;
-        private DistritoRepository()
+        public DistritoRepository(InmuebleVentaDbContext context) : base(context)
         {
-                
+
         }
+
+
+
+
+        /*private readonly InmuebleVentaDbContext _Context;
+
         public DistritoRepository(InmuebleVentaDbContext context)
         {
-            
             _Context = context;
         }
-       */
+
+        private DistritoRepository()
+        {
+
+        }
+
+    */
     }
 }

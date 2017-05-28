@@ -1,5 +1,5 @@
 ﻿using InmuebleVenta.Entities;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +10,22 @@ namespace InmuebleVenta.Persistence.Repositories
 {
     public class BoletaRepository : Repository<Boleta>, IBoletaRepository
     {
-        public BoletaRepository(InmuebleVentaDbContext context):base(context)
-		{
-		}
 
+        public BoletaRepository(InmuebleVentaDbContext context) : base(context)
+        {
 
-
-
-      //  private readonly InmuebleVentaDbContext _Context;
-
-    /*    
+        }
+        /*
+        private readonly InmuebleVentaDbContext _Context;
         public BoletaRepository(InmuebleVentaDbContext context)
         {
             _Context = context;
         }
+
         private BoletaRepository()
         {
-                
-        }
 
+        }
         */
     }
 }

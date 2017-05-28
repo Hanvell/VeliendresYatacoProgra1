@@ -1,5 +1,5 @@
 ﻿using InmuebleVenta.Entities;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,24 +8,25 @@ using System.Threading.Tasks;
 
 namespace InmuebleVenta.Persistence.Repositories
 {
-  public class ContratoRepository : Repository<Contrato>, IContratoRepository
+    public class ContratoRepository : Repository<Contrato>, IContratoRepository
     {
-       public ContratoRepository(InmuebleVentaDbContext context):base(context)
-		{
-	}
+        public ContratoRepository(InmuebleVentaDbContext context) : base(context)
+        {
+
+        }
 
 
-/*
-        private readonly InmuebleVentaDbContext _Context;
+        /* private readonly InmuebleVentaDbContext _Context;
+
+        public ContratoRepository(InmuebleVentaDbContext context)
+        {
+            _Context = context;
+        }
+
         private ContratoRepository()
         {
 
         }
-        public ContratoRepository(InmuebleVentaDbContext context)
-        {
-            
-            _Context = context;
-        }
-  */     
+        */
     }
 }

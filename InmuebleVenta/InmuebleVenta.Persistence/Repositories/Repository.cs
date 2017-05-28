@@ -1,17 +1,17 @@
-﻿using InmuebleVenta.Entities.Repositories;
+﻿using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
+using System.Data.Entity;
 
 namespace InmuebleVenta.Persistence.Repositories
 {
-    public class Repository<TEntity>:IRepository<TEntity> where TEntity: class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        
+
         protected readonly DbContext _Context;
 
         public Repository(DbContext context)
@@ -43,7 +43,6 @@ namespace InmuebleVenta.Persistence.Repositories
         {
             return _Context.Set<TEntity>().Where(predicate);
         }
-
         public void Add(TEntity entity)
         {
             _Context.Set<TEntity>().Add(entity);
@@ -54,14 +53,6 @@ namespace InmuebleVenta.Persistence.Repositories
             _Context.Set<TEntity>().AddRange(entities);
         }
 
-
-
-
-
-
-
-
-
         /*
         void IRepository<TEntity>.Add(TEntity entity)
         {
@@ -69,6 +60,21 @@ namespace InmuebleVenta.Persistence.Repositories
         }
 
         void IRepository<TEntity>.AddRange(IEnumerable<TEntity> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IRepository<TEntity>.Delete(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IRepository<TEntity>.DeleteRange(IEnumerable<TEntity> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<TEntity> IRepository<TEntity>.Find(Expression<Func<TEntity, bool>> predicate)
         {
             throw new NotImplementedException();
         }
@@ -83,11 +89,6 @@ namespace InmuebleVenta.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        IEnumerator<TEntity> IRepository<TEntity>.Find(System.Linq.Expressions.Expression<Func<TEntity, bool>> Predicate)
-        {
-            throw new NotImplementedException();
-        }
-
         void IRepository<TEntity>.Update(TEntity entity)
         {
             throw new NotImplementedException();
@@ -97,17 +98,6 @@ namespace InmuebleVenta.Persistence.Repositories
         {
             throw new NotImplementedException();
         }
-
-        void IRepository<TEntity>.Delete(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IRepository<TEntity>.DeleteRange(IEnumerable<TEntity> entities)
-        {
-            throw new NotImplementedException();
-        }
-         */ 
-         
+        */
     }
 }

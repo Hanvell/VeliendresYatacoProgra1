@@ -1,5 +1,5 @@
 ﻿using InmuebleVenta.Entities;
-using InmuebleVenta.Entities.Repositories;
+using InmuebleVenta.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +10,23 @@ namespace InmuebleVenta.Persistence.Repositories
 {
     public class TipoInmuebleRepository : Repository<TipoInmueble>, ITipoInmuebleRepository
     {
-         public TipoInmuebleRepository(InmuebleVentaDbContext context):base(context)
-		{
-		}
+        public TipoInmuebleRepository(InmuebleVentaDbContext context) : base(context)
+        {
 
-      /*  private readonly InmuebleVentaDbContext _Context;
-        private TipoInmuebleRepository()
-        {
-                
         }
-        public TipoInmuebleRepository(InmuebleVentaDbContext context)
-        {
-          
-            _Context = context;
-        }
-       */
+
+
+        /* private readonly  InmuebleVentaDbContext _Context;
+
+         public TipoInmuebleRepository(InmuebleVentaDbContext context)
+         {
+             _Context = context;
+         }
+
+         private TipoInmuebleRepository()
+         {
+
+         }
+         */
     }
 }
