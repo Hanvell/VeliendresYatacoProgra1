@@ -8,27 +8,43 @@ using System.Web;
 using System.Web.Mvc;
 using InmuebleVenta.Entities;
 using InmuebleVenta.Persistence;
+using InmuebleVenta.Entities.IRepositories;
 
 namespace InmuebleVenta.MVC.Controllers
 {
     public class DistritoesController : Controller
     {
-        private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
+
+        private readonly IUnityOfWork _UnityOfWork;
+
+        public DistritoesController()
+        {
+
+        }
+
+        public DistritoesController(IUnityOfWork unityOfWork)
+        {
+            _UnityOfWork = unityOfWork;
+        }
 
         // GET: Distritoes
         public ActionResult Index()
         {
-            return View(db.Distritos.ToList());
+            //return View(db.Distritos.ToList());
+            return View(_UnityOfWork.Distrito.GetAll());
         }
 
         // GET: Distritoes/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int ? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Distrito distrito = db.Distritos.Find(id);
+            //  Distrito distrito = db.Distritos.Find(id);
+            Distrito distrito = _UnityOfWork.Distrito.Get(id);
+
+
             if (distrito == null)
             {
                 return HttpNotFound();
@@ -51,8 +67,10 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Distritos.Add(distrito);
-                db.SaveChanges();
+               //  db.Distritos.Add(distrito);
+                _UnityOfWork.Distrito.Add(distrito);
+                // db.SaveChanges();
+                _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -60,13 +78,13 @@ namespace InmuebleVenta.MVC.Controllers
         }
 
         // GET: Distritoes/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int ? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Distrito distrito = db.Distritos.Find(id);
+            Distrito distrito = _UnityOfWork.Distrito.Get(id);
             if (distrito == null)
             {
                 return HttpNotFound();
@@ -83,8 +101,11 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(distrito).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(distrito).State = EntityState.Modified;
+                _UnityOfWork.StateModified(distrito);
+
+                // db.SaveChanges();
+                _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(distrito);
@@ -97,7 +118,8 @@ namespace InmuebleVenta.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Distrito distrito = db.Distritos.Find(id);
+            // Distrito distrito = db.Distritos.Find(id);
+            Distrito distrito = _UnityOfWork.Distrito.Get(id);
             if (distrito == null)
             {
                 return HttpNotFound();
@@ -110,9 +132,12 @@ namespace InmuebleVenta.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Distrito distrito = db.Distritos.Find(id);
-            db.Distritos.Remove(distrito);
-            db.SaveChanges();
+            Distrito distrito = _UnityOfWork.Distrito.Get(id);
+
+            // db.Distritos.Remove(distrito);
+            _UnityOfWork.Distrito.Delete(distrito);
+            // db.SaveChanges();
+            _UnityOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +145,7 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _UnityOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

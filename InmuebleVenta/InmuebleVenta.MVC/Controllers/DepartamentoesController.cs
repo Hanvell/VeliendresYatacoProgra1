@@ -12,130 +12,137 @@ using InmuebleVenta.Entities.IRepositories;
 
 namespace InmuebleVenta.MVC.Controllers
 {
-    public class ProvinciasController : Controller
+    public class DepartamentoesController : Controller
     {
         private readonly IUnityOfWork _UnityOfWork;
 
-        public ProvinciasController()
+        public DepartamentoesController()
         {
 
         }
 
-        public ProvinciasController(IUnityOfWork unityOfWork)
+        public DepartamentoesController(IUnityOfWork unityOfWork)
         {
             _UnityOfWork = unityOfWork;
         }
 
-        // GET: Provincias
+
+
+
+        // GET: Departamentoes
         public ActionResult Index()
         {
-            //return View(db.Provinciass.ToList());
-            return View(_UnityOfWork.Provincia.GetAll());
+           // return View(db.Departamentos.ToList());
+            return View(_UnityOfWork.Departamento.GetAll());
         }
 
-        // GET: Provincias/Details/5
-        public ActionResult Details(int? id)
+        // GET: Departamentoes/Details/5
+        public ActionResult Details(int ? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Provincia provincia = db.Provinciass.Find(id);
-            Provincia provincia = _UnityOfWork.Provincia.Get(id);
-            if (provincia == null)
+            //  Departamento departamento = db.Departamentos.Find(id);
+         
+            Departamento departamento = _UnityOfWork.Departamento.Get(id);
+            if (departamento == null)
             {
                 return HttpNotFound();
             }
-            return View(provincia);
+            return View(departamento);
         }
 
-        // GET: Provincias/Create
+        // GET: Departamentoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Provincias/Create
+        // POST: Departamentoes/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProvinciaId,Nombre")] Provincia provincia)
+        public ActionResult Create([Bind(Include = "DepartamentoId,Nombre")] Departamento departamento)
         {
             if (ModelState.IsValid)
             {
-                // db.Provinciass.Add(provincia);
-                _UnityOfWork.Provincia.Add(provincia);
+                //db.Departamentos.Add(departamento);
+                _UnityOfWork.Departamento.Add(departamento);
 
-                //db.SaveChanges();
+                // db.SaveChanges();
                 _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(provincia);
+            return View(departamento);
         }
 
-        // GET: Provincias/Edit/5
+        // GET: Departamentoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Provincia provincia = _UnityOfWork.Provincia.Get(id);
-            if (provincia == null)
+            // Departamento departamento = db.Departamentos.Find(id);
+            Departamento departamento = _UnityOfWork.Departamento.Get(id);
+
+            if (departamento == null)
             {
                 return HttpNotFound();
             }
-            return View(provincia);
+            return View(departamento);
         }
 
-        // POST: Provincias/Edit/5
+        // POST: Departamentoes/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProvinciaId,Nombre")] Provincia provincia)
+        public ActionResult Edit([Bind(Include = "DepartamentoId,Nombre")] Departamento departamento)
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(provincia).State = EntityState.Modified;
-                _UnityOfWork.StateModified(provincia);
+                // db.Entry(departamento).State = EntityState.Modified;
+                _UnityOfWork.StateModified(departamento);
 
                 // db.SaveChanges();
                 _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(provincia);
+            return View(departamento);
         }
 
-        // GET: Provincias/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Departamentoes/Delete/5
+        public ActionResult Delete(int ? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-           // Provincia provincia = db.Provinciass.Find(id);
-            Provincia provincia = _UnityOfWork.Provincia.Get(id);
-            if (provincia == null)
+            //Departamento departamento = db.Departamentos.Find(id);
+            Departamento departamento = _UnityOfWork.Departamento.Get(id);
+            if (departamento == null)
             {
                 return HttpNotFound();
             }
-            return View(provincia);
+            return View(departamento);
         }
 
-        // POST: Provincias/Delete/5
+        // POST: Departamentoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            //Provincia provincia = db.Provinciass.Find(id);
-            Provincia provincia = _UnityOfWork.Provincia.Get(id);
+            //Departamento departamento = db.Departamentos.Find(id);
+            Departamento departamento = _UnityOfWork.Departamento.Get(id);
 
-            //db.Provinciass.Remove(provincia);
-            _UnityOfWork.Provincia.Delete(provincia);
-            //db.SaveChanges();
+            // db.Departamentos.Remove(departamento);
+            _UnityOfWork.Departamento.Delete(departamento);
+
+            // db.SaveChanges();
             _UnityOfWork.SaveChanges();
             return RedirectToAction("Index");
         }

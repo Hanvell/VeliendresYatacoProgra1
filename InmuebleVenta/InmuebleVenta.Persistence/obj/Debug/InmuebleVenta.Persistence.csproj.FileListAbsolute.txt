@@ -64,3 +64,17 @@ C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\Inmueb
 C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.csproj.GenerateResource.Cache
 C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.dll
 C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.pdb
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\InmuebleVenta.Persistence.dll.config
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\InmuebleVenta.Persistence.dll
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\InmuebleVenta.Persistence.pdb
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\EntityFramework.dll
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\InmuebleVenta.Entities.dll
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\InmuebleVenta.Entities.pdb
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\EntityFramework.xml
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.csprojResolveAssemblyReference.cache
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.Migrations.InitialModel.resources
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.csproj.GenerateResource.Cache
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.dll
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Persistence\obj\Debug\InmuebleVenta.Persistence.pdb

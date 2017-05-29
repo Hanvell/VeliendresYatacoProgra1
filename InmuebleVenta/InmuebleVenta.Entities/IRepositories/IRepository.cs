@@ -18,7 +18,7 @@ namespace InmuebleVenta.Entities.IRepositories
 
         //R  EADS
         //Obtiene el Registro con Primary key =Id de la tabla TEntity
-        TEntity Get(int Id);
+        TEntity Get(int? Id);
         //Obtiene todos los registros de la tabla TEntity
         IEnumerable<TEntity> GetAll();
         //Obtiene todos los registros de la tabla TEntity que cumplan con la condicion preditate

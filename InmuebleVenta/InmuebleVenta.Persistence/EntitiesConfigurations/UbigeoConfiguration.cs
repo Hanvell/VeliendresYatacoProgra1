@@ -15,6 +15,9 @@ namespace InmuebleVenta.Persistence.EntitiesConfigurations
             //tabla
             ToTable("Ubigeos");
             HasKey(u => u.UbigeoId);
+
+
+
             //Relaciones
             HasRequired(u => u.Departamento)
                 .WithMany(d => d.Ubigeos)

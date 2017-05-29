@@ -149,21 +149,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BoletasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
-    <Compile Include="Controllers\ComprobantesController.cs" />
-    <Compile Include="Controllers\ContratoAlquilersController.cs" />
-    <Compile Include="Controllers\ContratoesController.cs" />
-    <Compile Include="Controllers\ContratoReservasController.cs" />
-    <Compile Include="Controllers\ContratoVentasController.cs" />
+    <Compile Include="Controllers\DepartamentoesController.cs" />
     <Compile Include="Controllers\DistritoesController.cs" />
-    <Compile Include="Controllers\EmpleadoesController.cs" />
-    <Compile Include="Controllers\FacturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InmueblesController.cs" />
-    <Compile Include="Controllers\PropietariosController.cs" />
     <Compile Include="Controllers\ProvinciasController.cs" />
-    <Compile Include="Controllers\TipoInmueblesController.cs" />
     <Compile Include="Controllers\UbigeosController.cs" />
-    <Compile Include="Controllers\VisitasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -296,6 +286,11 @@
     <Content Include="Views\ContratoVentas\Details.cshtml" />
     <Content Include="Views\ContratoVentas\Edit.cshtml" />
     <Content Include="Views\ContratoVentas\Index.cshtml" />
+    <Content Include="Views\Departamentoes\Create.cshtml" />
+    <Content Include="Views\Departamentoes\Delete.cshtml" />
+    <Content Include="Views\Departamentoes\Details.cshtml" />
+    <Content Include="Views\Departamentoes\Edit.cshtml" />
+    <Content Include="Views\Departamentoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

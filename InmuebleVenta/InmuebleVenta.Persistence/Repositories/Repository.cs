@@ -29,7 +29,7 @@ namespace InmuebleVenta.Persistence.Repositories
             _Context.Set<TEntity>().RemoveRange(entities);
         }
 
-        public TEntity Get(int id)
+        public TEntity Get(int? id)
         {
             return _Context.Set<TEntity>().Find(id);
         }

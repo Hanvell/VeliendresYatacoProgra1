@@ -27,3 +27,13 @@ C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Console\bin\Debug\EntityFram
 C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Console\obj\Debug\InmuebleVenta.Console.csprojResolveAssemblyReference.cache
 C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Console\obj\Debug\InmuebleVenta.Console.exe
 C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Console\obj\Debug\InmuebleVenta.Console.pdb
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\bin\Debug\InmuebleVenta.Console.exe.config
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\bin\Debug\InmuebleVenta.Console.exe
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\bin\Debug\InmuebleVenta.Console.pdb
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\bin\Debug\EntityFramework.dll
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\bin\Debug\EntityFramework.xml
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\obj\Debug\InmuebleVenta.Console.csprojResolveAssemblyReference.cache
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\obj\Debug\InmuebleVenta.Console.exe
+C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Console\obj\Debug\InmuebleVenta.Console.pdb
