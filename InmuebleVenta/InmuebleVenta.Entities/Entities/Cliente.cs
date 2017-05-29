@@ -13,7 +13,7 @@ namespace InmuebleVenta.Entities
         public string NombreCliente { get; set; }
         public string ApeCliente { get; set; }
         public int TelefonoCliente { get; set; }
-        public int DireccionCliente { get; set; }
+        public string DireccionCliente { get; set; }
 
         // Visita
         public Visita Visita { get; set; }

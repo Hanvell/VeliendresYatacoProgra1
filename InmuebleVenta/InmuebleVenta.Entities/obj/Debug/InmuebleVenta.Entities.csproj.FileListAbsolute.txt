@@ -23,6 +23,5 @@ C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleV
 C:\Users\HANSON\Desktop\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
 C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.dll
 C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Entities\bin\Debug\InmuebleVenta.Entities.pdb
-C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.csprojResolveAssemblyReference.cache
 C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.dll
 C:\Users\HANSON\Documents\Visual Studio 2017\Projects\VeliendresYatacoProgra1\InmuebleVenta\InmuebleVenta.Entities\obj\Debug\InmuebleVenta.Entities.pdb
