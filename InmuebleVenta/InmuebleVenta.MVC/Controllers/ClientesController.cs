@@ -16,17 +16,15 @@ namespace InmuebleVenta.MVC.Controllers
     {
         //private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
         private readonly IUnityOfWork _UnityOfWork;
-
-        public ClientesController()
-        {
-
-        }
-
-        public  ClientesController(IUnityOfWork unityOfWork)
+        public ClientesController(IUnityOfWork unityOfWork)
         {
             _UnityOfWork = unityOfWork;
         }
 
+        public ClientesController()
+        {
+           
+        }
         // GET: Clientes
         public ActionResult Index()
         {
