@@ -8,141 +8,134 @@ using System.Web;
 using System.Web.Mvc;
 using InmuebleVenta.Entities;
 using InmuebleVenta.Persistence;
+using InmuebleVenta.Persistence.Repositories;
 using InmuebleVenta.Entities.IRepositories;
 
 namespace InmuebleVenta.MVC.Controllers
 {
-    public class ClientesController : Controller
+    public class EmpleadoesController : Controller
     {
-        //private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
         private readonly IUnityOfWork _UnityOfWork;
 
-        public ClientesController()
+        public EmpleadoesController()
         {
 
         }
 
-        public  ClientesController(IUnityOfWork unityOfWork)
+        public EmpleadoesController(IUnityOfWork unityOfWork)
         {
             _UnityOfWork = unityOfWork;
         }
-
-        // GET: Clientes
+        // GET: Empleados
         public ActionResult Index()
         {
-            //return View(db.Clientes.ToList());
-            return View(_UnityOfWork.Cliente.GetAll());
+            // return View(db.Empleados.ToList());
+            return View(_UnityOfWork.Empleado.GetAll());
         }
 
-        // GET: Clientes/Details/5
+        // GET: Empleadoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            // Cliente cliente = db.Clientes.Find(id);
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-
-        
-            if (cliente == null)
+            //Empleado empleado = db.Empleados.Find(id);
+            Empleado empleado = _UnityOfWork.Empleado.Get(id);
+            if (empleado == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(empleado);
         }
 
-        // GET: Clientes/Create
+        // GET: Empleadoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Clientes/Create
+        // POST: Empleadoes/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClienteDNI,NombreCliente,ApeCliente,TelefonoCliente,DireccionCliente,VisitaId,ContratoId")] Cliente cliente)
+        public ActionResult Create([Bind(Include = "EmpleadoDNI,NombreEmpleado,ApeEmpleado,TelefonoEmpleado,DireccionEmpleado,VisitaId,ContratoId")] Empleado empleado)
         {
             if (ModelState.IsValid)
-            {
+            { //db.Empleado.Add(boleta);
+                _UnityOfWork.Empleado.Add(empleado);
 
-                _UnityOfWork.Cliente.Add(cliente);
-
-               // db.Clientes.Add(cliente);
-
+                // db.SaveChanges();
                 _UnityOfWork.SaveChanges();
-
-               // db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cliente);
+            return View(empleado);
         }
 
-        // GET: Clientes/Edit/5
+        // GET: Empleadoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Cliente cliente = db.Clientes.Find(id);
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-            if (cliente == null)
+            // Empleado empleado = db.Empleados.Find(id);
+            Empleado empleado = _UnityOfWork.Empleado.Get(id);
+            if (empleado == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(empleado);
         }
 
-        // POST: Clientes/Edit/5
+        // POST: Empleadoes/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClienteDNI,NombreCliente,ApeCliente,TelefonoCliente,DireccionCliente,VisitaId,ContratoId")] Cliente cliente)
+        public ActionResult Edit([Bind(Include = "EmpleadoDNI,NombreEmpleado,ApeEmpleado,TelefonoEmpleado,DireccionEmpleado,VisitaId,ContratoId")] Empleado empleado)
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(cliente).State = EntityState.Modified;
-                _UnityOfWork.StateModified(cliente);
-
-                //db.SaveChanges();
+                // db.Entry(empleado).State = EntityState.Modified;
+                _UnityOfWork.StateModified(empleado);
+                // db.SaveChanges();
                 _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cliente);
+            return View(empleado);
         }
 
-        // GET: Clientes/Delete/5
+        // GET: Empleadoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-            if (cliente == null)
+            Empleado empleado = _UnityOfWork.Empleado.Get(id);
+            if (empleado == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(empleado);
         }
 
-        // POST: Clientes/Delete/5
+        // POST: Empleadoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-            // db.Clientes.Remove(cliente);
-            _UnityOfWork.Cliente.Delete(cliente);
+            // Empleado empleado = db.Empleados.Find(id);
+            Empleado empleado = _UnityOfWork.Empleado.Get(id);
 
-            //db.SaveChanges();
+            //db.Empleados.Remove(empleado);
+            _UnityOfWork.Empleado.Delete(empleado);
+
+            // db.SaveChanges();
             _UnityOfWork.SaveChanges();
-               
             return RedirectToAction("Index");
         }
 
@@ -150,7 +143,6 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (disposing)
             {
-                // db.Dispose();
                 _UnityOfWork.Dispose();
             }
             base.Dispose(disposing);

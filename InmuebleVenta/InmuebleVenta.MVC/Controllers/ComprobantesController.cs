@@ -12,137 +12,132 @@ using InmuebleVenta.Entities.IRepositories;
 
 namespace InmuebleVenta.MVC.Controllers
 {
-    public class ClientesController : Controller
+    public class ComprobantesController : Controller
     {
-        //private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
         private readonly IUnityOfWork _UnityOfWork;
 
-        public ClientesController()
+        public ComprobantesController()
         {
 
         }
 
-        public  ClientesController(IUnityOfWork unityOfWork)
+        public ComprobantesController(IUnityOfWork unityOfWork)
         {
             _UnityOfWork = unityOfWork;
         }
 
-        // GET: Clientes
+        // GET: Comprobantes
         public ActionResult Index()
         {
-            //return View(db.Clientes.ToList());
-            return View(_UnityOfWork.Cliente.GetAll());
+            //return View(db.Comprobantes.ToList());
+            return View(_UnityOfWork.Comprobante.GetAll());
         }
 
-        // GET: Clientes/Details/5
+        // GET: Comprobantes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            // Cliente cliente = db.Clientes.Find(id);
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-
-        
-            if (cliente == null)
+            //Comprobante comprobante = db.Comprobantes.Find(id);
+            Comprobante comprobante = _UnityOfWork.Comprobante.Get(id);
+            if (comprobante == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(comprobante);
         }
 
-        // GET: Clientes/Create
+        // GET: Comprobantes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Clientes/Create
+        // POST: Comprobantes/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClienteDNI,NombreCliente,ApeCliente,TelefonoCliente,DireccionCliente,VisitaId,ContratoId")] Cliente cliente)
+        public ActionResult Create([Bind(Include = "ComprobanteId,Fecha,Monto,ContratoResarvaId,ContratoAlquilerId")] Comprobante comprobante)
         {
             if (ModelState.IsValid)
             {
+                // db.Comprobantes.Add(comprobante);
+                _UnityOfWork.Comprobante.Add(comprobante);
 
-                _UnityOfWork.Cliente.Add(cliente);
-
-               // db.Clientes.Add(cliente);
-
+                //db.SaveChanges();
                 _UnityOfWork.SaveChanges();
-
-               // db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cliente);
+            return View(comprobante);
         }
 
-        // GET: Clientes/Edit/5
+        // GET: Comprobantes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Cliente cliente = db.Clientes.Find(id);
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-            if (cliente == null)
+            // Comprobante comprobante = db.Comprobantes.Find(id);
+            Comprobante comprobante = _UnityOfWork.Comprobante.Get(id);
+            if (comprobante == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(comprobante);
         }
 
-        // POST: Clientes/Edit/5
+        // POST: Comprobantes/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClienteDNI,NombreCliente,ApeCliente,TelefonoCliente,DireccionCliente,VisitaId,ContratoId")] Cliente cliente)
+        public ActionResult Edit([Bind(Include = "ComprobanteId,Fecha,Monto,ContratoResarvaId,ContratoAlquilerId")] Comprobante comprobante)
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(cliente).State = EntityState.Modified;
-                _UnityOfWork.StateModified(cliente);
+                // db.Entry(comprobante).State = EntityState.Modified;
+                _UnityOfWork.StateModified(comprobante);
 
                 //db.SaveChanges();
                 _UnityOfWork.SaveChanges();
+
                 return RedirectToAction("Index");
             }
-            return View(cliente);
+            return View(comprobante);
         }
 
-        // GET: Clientes/Delete/5
+        // GET: Comprobantes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-            if (cliente == null)
+            // Comprobante comprobante = db.Comprobantes.Find(id);
+            Comprobante comprobante = _UnityOfWork.Comprobante.Get(id);
+            if (comprobante == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(comprobante);
         }
 
-        // POST: Clientes/Delete/5
+        // POST: Comprobantes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cliente cliente = _UnityOfWork.Cliente.Get(id);
-            // db.Clientes.Remove(cliente);
-            _UnityOfWork.Cliente.Delete(cliente);
-
+            //Comprobante comprobante = db.Comprobantes.Find(id);
+            Comprobante comprobante = _UnityOfWork.Comprobante.Get(id);
+            //db.Comprobantes.Remove(comprobante);
+            _UnityOfWork.Comprobante.Delete(comprobante);
             //db.SaveChanges();
             _UnityOfWork.SaveChanges();
-               
             return RedirectToAction("Index");
         }
 
@@ -150,7 +145,6 @@ namespace InmuebleVenta.MVC.Controllers
         {
             if (disposing)
             {
-                // db.Dispose();
                 _UnityOfWork.Dispose();
             }
             base.Dispose(disposing);

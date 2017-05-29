@@ -149,8 +149,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BoletasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ComprobantesController.cs" />
     <Compile Include="Controllers\DepartamentoesController.cs" />
     <Compile Include="Controllers\DistritoesController.cs" />
+    <Compile Include="Controllers\EmpleadoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProvinciasController.cs" />
     <Compile Include="Controllers\UbigeosController.cs" />
