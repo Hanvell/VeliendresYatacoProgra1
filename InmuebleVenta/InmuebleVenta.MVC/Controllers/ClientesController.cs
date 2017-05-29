@@ -9,22 +9,21 @@ using System.Web.Mvc;
 using InmuebleVenta.Entities;
 using InmuebleVenta.Persistence;
 using InmuebleVenta.Entities.IRepositories;
+using InmuebleVenta.Persistence.Repositories;
 
 namespace InmuebleVenta.MVC.Controllers
 {
     public class ClientesController : Controller
     {
         //private InmuebleVentaDbContext db = new InmuebleVentaDbContext();
-        private readonly IUnityOfWork _UnityOfWork;
-        public ClientesController(IUnityOfWork unityOfWork)
-        {
-            _UnityOfWork = unityOfWork;
-        }
+        private readonly UnityOfWork _UnityOfWork = UnityOfWork.Instance;
+
 
         public ClientesController()
         {
-           
+
         }
+
         // GET: Clientes
         public ActionResult Index()
         {
